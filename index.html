@@ -4,305 +4,189 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>ShopEase | Online Store</title>
-
+    <meta name="description" content="Discover trending fashion, technology and lifestyle products at NovaMart.">
+    <title>NovaMart | Discover Something New</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="script.js" defer></script>
 </head>
-
 <body>
 
-    <!-- Navigation Bar -->
-    <header class="navbar">
-        <a href="#" class="logo">Shop<span>Ease</span></a>
+    <div class="announcement">
+        ✨ Welcome to NovaMart — Your next favourite find awaits!
+    </div>
 
-        <nav>
+    <header class="navbar">
+        <a href="#" class="logo"><span class="logo-icon">N</span> nova<span>mart.</span></a>
+
+        <nav class="nav-links">
             <a href="#home">Home</a>
-            <a href="#products">Products</a>
-            <a href="#cart">My Cart</a>
+            <a href="#shop">Shop</a>
+            <a href="#categories">Categories</a>
+            <a href="#about">About</a>
         </nav>
 
-        <a href="#cart" class="cart-link">
-            🛒 Cart
-            <span id="cart-count" class="cart-badge">0</span>
-        </a>
+        <div class="nav-actions">
+            <button class="icon-button" id="search-focus" aria-label="Focus search">⌕</button>
+            <button class="icon-button wishlist-nav" id="wishlist-nav" aria-label="Show wishlist">
+                ♡ <span id="wishlist-count" class="small-count">0</span>
+            </button>
+            <button class="cart-nav" id="open-cart">
+                🛍 Cart <span id="cart-count" class="cart-count">0</span>
+            </button>
+        </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="hero-content">
-            <p class="eyebrow">YOUR EVERYDAY SHOPPING DESTINATION</p>
-
-            <h1>Find Your Next<br>
-                <span>Favourite Thing.</span>
-            </h1>
-
-            <p>
-                Discover quality products, great styles,
-                and everyday essentials at amazing prices.
-            </p>
-
-            <a href="#products" class="shop-btn">Explore Products →</a>
-        </div>
-
-        <div class="hero-art" aria-hidden="true">
-            <div class="hero-circle">🛍️</div>
-            <span class="floating-item item-one">🎧</span>
-            <span class="floating-item item-two">⌚</span>
-            <span class="floating-item item-three">👟</span>
-        </div>
-    </section>
-
-    <!-- Products Section -->
     <main>
-        <section class="products-section" id="products">
-
-            <div class="section-heading">
-                <div>
-                    <p class="eyebrow">HANDPICKED FOR YOU</p>
-                    <h2>Our Products</h2>
-                    <p class="section-description">
-                        Explore our collection of everyday favourites.
-                    </p>
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <span class="eyebrow">YOUR EVERYDAY, UPGRADED</span>
+                <h1>Find your next<br> <span>favourite thing.</span></h1>
+                <p>Thoughtfully picked essentials, trending finds and little things that make life better.</p>
+                <div class="hero-actions">
+                    <a href="#shop" class="primary-button">Explore collection ↗</a>
+                    <span class="hero-note">✦ Curated just for you</span>
                 </div>
-
-                <span class="product-count">6 PRODUCTS</span>
+                <div class="hero-stats">
+                    <div><strong>12+</strong><span>Unique products</span></div>
+                    <div><strong>4.8/5</strong><span>Demo rating</span></div>
+                    <div><strong>100%</strong><span>Good vibes</span></div>
+                </div>
             </div>
-
-            <div class="product-grid">
-
-                <!-- Product 1 -->
-                <article class="product-card">
-                    <div class="product-image">
-                        <span class="product-tag">Popular</span>
-                        <img
-                            src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=700&q=80"
-                            alt="Wireless headphones">
-                    </div>
-
-                    <div class="product-info">
-                        <p class="category">Electronics</p>
-                        <h3>Wireless Headphones</h3>
-                        <p class="description">
-                            Enjoy clear sound and comfortable listening.
-                        </p>
-
-                        <div class="product-bottom">
-                            <span class="price">₹1,499</span>
-                            <button class="add-btn"
-                                data-id="1"
-                                data-name="Wireless Headphones"
-                                data-price="1499"
-                                data-image="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=200&q=80">
-                                + Add
-                            </button>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Product 2 -->
-                <article class="product-card">
-                    <div class="product-image">
-                        <span class="product-tag new-tag">New</span>
-                        <img
-                            src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=700&q=80"
-                            alt="Classic wristwatch">
-                    </div>
-
-                    <div class="product-info">
-                        <p class="category">Accessories</p>
-                        <h3>Classic Wristwatch</h3>
-                        <p class="description">
-                            A timeless design for every occasion.
-                        </p>
-
-                        <div class="product-bottom">
-                            <span class="price">₹2,299</span>
-                            <button class="add-btn"
-                                data-id="2"
-                                data-name="Classic Wristwatch"
-                                data-price="2299"
-                                data-image="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=200&q=80">
-                                + Add
-                            </button>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Product 3 -->
-                <article class="product-card">
-                    <div class="product-image">
-                        <img
-                            src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=700&q=80"
-                            alt="Red sports sneakers">
-                    </div>
-
-                    <div class="product-info">
-                        <p class="category">Footwear</p>
-                        <h3>Sporty Sneakers</h3>
-                        <p class="description">
-                            Lightweight sneakers for daily adventures.
-                        </p>
-
-                        <div class="product-bottom">
-                            <span class="price">₹1,899</span>
-                            <button class="add-btn"
-                                data-id="3"
-                                data-name="Sporty Sneakers"
-                                data-price="1899"
-                                data-image="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=200&q=80">
-                                + Add
-                            </button>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Product 4 -->
-                <article class="product-card">
-                    <div class="product-image">
-                        <img
-                            src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=700&q=80"
-                            alt="Stylish handbag">
-                    </div>
-
-                    <div class="product-info">
-                        <p class="category">Fashion</p>
-                        <h3>Everyday Handbag</h3>
-                        <p class="description">
-                            A stylish companion for your daily essentials.
-                        </p>
-
-                        <div class="product-bottom">
-                            <span class="price">₹1,299</span>
-                            <button class="add-btn"
-                                data-id="4"
-                                data-name="Everyday Handbag"
-                                data-price="1299"
-                                data-image="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=200&q=80">
-                                + Add
-                            </button>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Product 5 -->
-                <article class="product-card">
-                    <div class="product-image">
-                        <span class="product-tag">Popular</span>
-                        <img
-                            src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?auto=format&fit=crop&w=700&q=80"
-                            alt="Vintage style camera">
-                    </div>
-
-                    <div class="product-info">
-                        <p class="category">Electronics</p>
-                        <h3>Classic Camera</h3>
-                        <p class="description">
-                            Capture your favourite everyday moments.
-                        </p>
-
-                        <div class="product-bottom">
-                            <span class="price">₹3,499</span>
-                            <button class="add-btn"
-                                data-id="5"
-                                data-name="Classic Camera"
-                                data-price="3499"
-                                data-image="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?auto=format&fit=crop&w=200&q=80">
-                                + Add
-                            </button>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Product 6 -->
-                <article class="product-card">
-                    <div class="product-image">
-                        <img
-                            src="https://images.unsplash.com/photo-1503602642458-232111445657?auto=format&fit=crop&w=700&q=80"
-                            alt="Modern chair">
-                    </div>
-
-                    <div class="product-info">
-                        <p class="category">Home & Living</p>
-                        <h3>Modern Accent Chair</h3>
-                        <p class="description">
-                            Bring comfort and style to your favourite corner.
-                        </p>
-
-                        <div class="product-bottom">
-                            <span class="price">₹4,299</span>
-                            <button class="add-btn"
-                                data-id="6"
-                                data-name="Modern Accent Chair"
-                                data-price="4299"
-                                data-image="https://images.unsplash.com/photo-1503602642458-232111445657?auto=format&fit=crop&w=200&q=80">
-                                + Add
-                            </button>
-                        </div>
-                    </div>
-                </article>
-
+            <div class="hero-visual">
+                <div class="hero-orb"></div>
+                <div class="hero-image-wrap">
+                    <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=900&q=85" alt="Red statement sneakers">
+                </div>
+                <div class="floating-card floating-top">✦ Trending now</div>
+                <div class="floating-card floating-bottom"><span>✦</span><div><strong>Little things.</strong><small>Big happiness.</small></div></div>
             </div>
         </section>
 
-        <!-- Shopping Cart Section -->
-        <section class="cart-section" id="cart">
-            <div class="cart-heading">
-                <div>
-                    <p class="eyebrow">YOUR SELECTION</p>
-                    <h2>Shopping Cart 🛒</h2>
-                </div>
+        <section class="trust-strip">
+            <div>✦ Carefully curated finds</div>
+            <div>♡ Made for everyday living</div>
+            <div>↗ Simple, joyful shopping</div>
+            <div>◈ Student-built demo store</div>
+        </section>
 
-                <span id="cart-items-label">0 items</span>
+        <section class="category-section section" id="categories">
+            <div class="section-heading">
+                <div><span class="eyebrow">EXPLORE YOUR STYLE</span><h2>Shop by category</h2></div>
+                <p>A little something for every kind of you.</p>
+            </div>
+            <div class="category-list">
+                <button class="category-tile active" data-category="All"><span>✦</span><strong>Everything</strong><small>All the good stuff</small></button>
+                <button class="category-tile" data-category="Fashion"><span>◈</span><strong>Fashion</strong><small>Wear your vibe</small></button>
+                <button class="category-tile" data-category="Technology"><span>⌁</span><strong>Technology</strong><small>Smart little upgrades</small></button>
+                <button class="category-tile" data-category="Lifestyle"><span>❋</span><strong>Lifestyle</strong><small>Everyday favourites</small></button>
+                <button class="category-tile" data-category="Accessories"><span>♡</span><strong>Accessories</strong><small>Details that shine</small></button>
+            </div>
+        </section>
+
+        <section class="shop-section section" id="shop">
+            <div class="section-heading">
+                <div><span class="eyebrow">THE GOOD STUFF</span><h2>Our favourite finds<span class="heading-dot">.</span></h2><p class="muted">Explore our collection of hand-picked essentials.</p></div>
+                <span class="product-total" id="product-total">12 products</span>
             </div>
 
-            <div class="cart-layout">
-
-                <div class="cart-items" id="cart-items">
-                    <div class="empty-cart">
-                        <div class="empty-icon">🛍️</div>
-                        <h3>Your cart is empty</h3>
-                        <p>Add something you love from our products.</p>
-                        <a href="#products" class="continue-btn">
-                            Explore Products
-                        </a>
-                    </div>
-                </div>
-
-                <aside class="cart-summary">
-                    <h3>Order Summary</h3>
-
-                    <div class="summary-row">
-                        <span>Total items</span>
-                        <span id="summary-count">0</span>
-                    </div>
-
-                    <div class="summary-row total-row">
-                        <span>Total price</span>
-                        <span id="cart-total">₹0</span>
-                    </div>
-
-                    <button class="checkout-btn" type="button"
-                        id="demo-checkout">
-                        Checkout Demo →
-                    </button>
-
-                    <p class="demo-note">
-                        Demo only — no real payment or checkout.
-                    </p>
-                </aside>
-
+            <div class="shop-toolbar">
+                <label class="search-box">
+                    <span>⌕</span>
+                    <input id="search-input" type="search" placeholder="Search products..." aria-label="Search products">
+                    <kbd>SEARCH</kbd>
+                </label>
+                <label class="sort-box">Sort by
+                    <select id="sort-select" aria-label="Sort products">
+                        <option value="featured">Featured</option>
+                        <option value="low">Price: low to high</option>
+                        <option value="high">Price: high to low</option>
+                        <option value="rating">Top rated</option>
+                        <option value="name">Name: A–Z</option>
+                    </select>
+                </label>
             </div>
+
+            <div class="active-filters">
+                <div class="filter-chips" id="filter-chips">
+                    <button class="filter-chip active" data-category="All">All products</button>
+                    <button class="filter-chip" data-category="Fashion">Fashion</button>
+                    <button class="filter-chip" data-category="Technology">Technology</button>
+                    <button class="filter-chip" data-category="Lifestyle">Lifestyle</button>
+                    <button class="filter-chip" data-category="Accessories">Accessories</button>
+                </div>
+                <label class="sale-toggle"><input type="checkbox" id="sale-filter"> Sale items only</label>
+            </div>
+
+            <div class="product-grid" id="product-grid" aria-live="polite"></div>
+            <div class="empty-state hidden" id="empty-state">
+                <span>⌕</span><h3>No products found</h3><p>Try another search or change your filters.</p>
+                <button class="primary-button" id="reset-filters">Reset filters</button>
+            </div>
+        </section>
+
+        <section class="promo-banner section" id="about">
+            <div class="promo-copy"><span class="eyebrow">A LITTLE MORE JOY</span><h2>Good finds.<br>Better everyday.</h2><p>NovaMart is a student-built shopping experience made to demonstrate modern web design and interactive shopping features.</p><a href="#shop" class="light-button">Find your favourite ↗</a></div>
+            <div class="promo-decoration"><div class="promo-circle">N<span>✦</span></div><span class="promo-star star-one">✳</span><span class="promo-star star-two">✦</span></div>
+        </section>
+
+        <section class="features-row section">
+            <article><span>♡</span><h3>Curated with care</h3><p>A collection across everyday categories.</p></article>
+            <article><span>✦</span><h3>Easy to explore</h3><p>Find products with search and filters.</p></article>
+            <article><span>↗</span><h3>Simple cart</h3><p>Track items and calculate your total instantly.</p></article>
         </section>
     </main>
 
-    <!-- Footer -->
     <footer class="footer">
-        <a href="#" class="logo">Shop<span>Ease</span></a>
-        <p>A student project built with HTML, CSS and JavaScript.</p>
-        <p>© 2026 ShopEase. All rights reserved.</p>
+        <a href="#home" class="logo"><span class="logo-icon">N</span> nova<span>mart.</span></a>
+        <p>A front-end e-commerce project made with HTML, CSS & JavaScript.</p>
+        <span>© 2026 NovaMart · Group 8 · Academic demo only</span>
     </footer>
+
+    <div class="overlay" id="overlay"></div>
+
+    <aside class="cart-drawer" id="cart-drawer" aria-label="Shopping cart" aria-hidden="true">
+        <div class="drawer-header">
+            <div><span class="eyebrow">YOUR PICKS</span><h2>Your cart <span id="drawer-count">(0)</span></h2></div>
+            <button class="close-button" id="close-cart" aria-label="Close cart">×</button>
+        </div>
+
+        <div class="cart-items" id="cart-items"></div>
+
+        <div class="cart-empty" id="cart-empty">
+            <span>🛍</span><h3>Your cart is waiting</h3><p>Looks like you haven't found your favourites yet.</p>
+            <button class="primary-button" id="continue-shopping">Let's explore</button>
+        </div>
+
+        <div class="cart-summary" id="cart-summary">
+            <div class="summary-line"><span>Subtotal</span><strong id="cart-subtotal">₹0</strong></div>
+            <div class="summary-line"><span>Delivery</span><strong id="delivery-cost">₹0</strong></div>
+            <div class="summary-line discount-line"><span>Demo discount (5%)</span><strong id="discount-amount">−₹0</strong></div>
+            <div class="summary-line total-line"><span>Total amount</span><strong id="cart-total">₹0</strong></div>
+            <p class="shipping-note" id="shipping-note">Add products to see your order summary.</p>
+            <button class="checkout-button" id="checkout-button">Proceed to demo checkout ↗</button>
+            <button class="clear-cart-button" id="clear-cart">Clear cart</button>
+            <p class="demo-disclaimer">Demo only · No real payment or order will be made.</p>
+        </div>
+    </aside>
+
+    <div class="toast-container" id="toast-container" aria-live="polite"></div>
+
+    <div class="modal-backdrop" id="checkout-modal" role="dialog" aria-modal="true" aria-labelledby="checkout-title">
+        <div class="checkout-modal">
+            <button class="close-button modal-close" id="close-checkout" aria-label="Close checkout">×</button>
+            <div class="success-icon">✓</div>
+            <span class="eyebrow">DEMO CHECKOUT</span>
+            <h2 id="checkout-title">Looking good!</h2>
+            <p>This is a front-end demonstration. No payment has been taken and no real order has been placed.</p>
+            <div class="checkout-total"><span>Demo order total</span><strong id="modal-total">₹0</strong></div>
+            <button class="primary-button full-button" id="finish-checkout">Back to shopping</button>
+        </div>
+    </div>
+
+    <button class="back-to-top" id="back-to-top" aria-label="Back to top">↑</button>
 
 </body>
 </html>
