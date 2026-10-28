@@ -83,12 +83,7 @@ Static-E-Commerce-Product-Page/
 ├── style.css
 ├── script.js
 ├── README.md
-│
-└── images/
-    ├── product1.jpg
-    ├── product2.jpg
-    ├── product3.jpg
-    └── product4.jpg
+
 
 
 ## 🚀 How to Run the Project
