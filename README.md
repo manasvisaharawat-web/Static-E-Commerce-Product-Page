@@ -1,70 +1,101 @@
-# ITC-project
+# 🛍️ Static E-Commerce Product Page
 
-## Static E-Commerce Product Page
+## 📌 Project Information
 
-### About the Project
+**Project Title:** Static E-Commerce Product Page  
+**Group Number:** Group 8  
+**Assigned Project:** Project #24  
+**Difficulty Level:** Beginner (Semester 1)
 
-The **Static E-Commerce Product Page** is a responsive web application designed as a mock online store product listing page. It provides an intuitive client-side demonstration where visitors can explore a catalog of products, view descriptions and prices, dynamically add items to a shopping cart, see real-time cart counter updates, remove items, and view an automatically calculated running total.
+## 👥 Group Members
 
-The project is developed using pure **HTML5**, **CSS3**, and **Vanilla JavaScript** (with no external frameworks), focusing on core front-end principles and interactive DOM manipulation.
+| S. No. | Student Name       | Roll Number        |
+|--------|--------------------|--------------------|
+| 1      | Manas Dubey        | 202610101200022    |
+| 2      | Sakshi Nagar       | 202610101200023    |
+| 3      | Manasvi Saharawat  | 202610101200024    |
 
----
+## 📝 Project Description
 
-### Group Information
+The Static E-Commerce Product Page is a simple online store
+product listing page developed using HTML, CSS, and basic JavaScript.
 
-- **Group Number:** 8
-- **Assigned Project:** #24 — Static E-Commerce Product Page
-- **Difficulty Level:** Beginner (Semester 1 — Consistent Level)
+It displays different products with their images, names, prices,
+and descriptions. Users can add products to a shopping cart,
+remove items from the cart, and view the total price of the
+selected products.
 
----
+This project is designed for front-end demonstration only.
+It does not include a real payment system, checkout process,
+or backend functionality.
 
-### Group Members
+## 🎯 Project Objectives
 
-| S. No. | Student Name | Roll Number |
-| :---: | :--- | :---: |
-| 1 | Manas Dubey | 202610101200022 |
-| 2 | Sakshi Nagar | 202610101200023 |
-| 3 | Manasvi Saharawat | 202610101200024 |
+- Create an attractive product listing page.
+- Display products with images, names, descriptions, and prices.
+- Implement an interactive shopping cart.
+- Allow users to add and remove products from the cart.
+- Display the number of items in the cart.
+- Calculate and display the total price.
+- Practice HTML, CSS, and basic JavaScript.
 
----
+## ✨ Features Implemented
 
-### Project Requirements & Key Features
+- **Product Grid:** Displays products in an organized grid layout.
+- **Product Images:** Shows images of different products.
+- **Product Details:** Displays product names, descriptions, and prices.
+- **Add to Cart:** Allows users to add products to the cart.
+- **Cart Counter:** Displays the number of items added to the cart.
+- **Cart Item List:** Shows the products selected by the user.
+- **Remove Items:** Allows users to remove products from the cart.
+- **Total Price Calculation:** Calculates the total cost of cart items.
+- **Interactive Buttons:** Provides click functionality using JavaScript.
+- **Responsive Design:** Helps the page adapt to different screen sizes.
 
-#### 1. HTML Requirements
-- **Product Cards:** Structured cards containing product image, title/name, price, and descriptive text.
-- **Cart Section:** Dedicated static container section to display all currently selected items.
+> Note: Keep only the features that are actually implemented in your project.
 
-#### 2. CSS Requirements
-- **Grid Layout:** Responsive CSS Grid layout displaying product cards cleanly across all screen sizes.
-- **Button Styling:** Custom-styled **"Add to Cart"** and **"Remove"** interactive buttons with hover transitions.
-- **Badge Styling:** Visual badge styling highlighting the live cart item counter.
+## 🛠️ Technologies Used
 
-#### 3. JavaScript Requirements
-- **Add to Cart:** Clicking "Add to Cart" dynamically appends the item to the cart list and increments the counter badge.
-- **Remove from Cart:** Allows users to remove specific items from the cart list.
-- **Running Total:** Automatically calculates, updates, and displays the total price in real time.
+### 1. HTML5
+- Creates the structure of the product page.
+- Displays product cards and product information.
+- Creates the shopping cart section.
 
----
+### 2. CSS3
+- Styles product cards and buttons.
+- Uses CSS Grid to arrange products.
+- Styles the cart counter badge.
+- Improves the appearance and layout of the webpage.
 
-### Technologies Used
+### 3. JavaScript
+- Handles Add to Cart button clicks.
+- Maintains the list of selected products.
+- Removes products from the cart.
+- Updates the cart item counter.
+- Calculates the total price dynamically.
+- Updates webpage elements using DOM manipulation.
 
-- **HTML5:** Semantic markup (`<header>`, `<main>`, `<section>`, `<article>`)
-- **CSS3:** CSS Grid, Flexbox, custom badge indicators, and responsive media queries
-- **JavaScript (ES6):** Dynamic DOM manipulation, event listeners, and array state handling
+## 📂 Project Structure
 
----
+Static-E-Commerce-Product-Page/
+│
+├── index.html
+├── style.css
+├── script.js
+├── README.md
 
-### Suggested Learning Outcomes
 
-- Dynamic array-like list management (adding, filtering, removing items).
-- Real-time DOM updates and event-driven architecture in JavaScript.
-- Managing running totals and mathematical calculations in UI state.
-- Modern CSS Grid design patterns without relying on third-party frameworks.
+## 🚀 How to Run the Project
 
----
+Follow these steps to run the project:
 
-### How to Run the Project
+1. Download or clone the GitHub repository.
+2. Open the project folder on your computer.
+3. Make sure the HTML, CSS, and JavaScript files are present.
+4. Check that the product image paths are correct.
+5. Open `index.html` in a web browser.
+6. Browse the available products.
+7. Click the "Add to Cart" button to add a product.
+8. Check the cart counter and selected product list.
+9. Remove products and verify that the total price updates correctly.
 
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/<your-username>/ITC-project.git
