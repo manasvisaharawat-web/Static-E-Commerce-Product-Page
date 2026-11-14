@@ -146,6 +146,9 @@ span{
     margin-right: 10px;
     
 }
+.img li:hover{
+    color:red;
+}
 .img1{
     background-image: url(hero-img-2.avif);
     background-size: cover;
