@@ -144,7 +144,10 @@ span{
     justify-content: space-evenly;
     border-radius: 1rem;
     margin-right: 10px;
-    
+       
+}
+.img li :hover{
+    color:rgb(190, 4, 47) ; 
 }
 .img li:hover{
     color:red;
