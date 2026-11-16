@@ -209,4 +209,4 @@ if (sortSelect) {
 // Show all products and an empty cart when the page first loads.
 displayProducts();
 displayCart();
->>>>>>> 79124f9 (commit all file again)
+
