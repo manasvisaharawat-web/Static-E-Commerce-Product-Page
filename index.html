@@ -1,192 +1,232 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Discover trending fashion, technology and lifestyle products at NovaMart.">
-    <title>NovaMart | Discover Something New</title>
+    <title>NovaMart</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg==" crossorigin="anonymous" referrerpolicy="no-referrer">
     <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="script.js" defer></script>
 </head>
 <body>
+    <header>
+        <div class="navbar">
+            <div class="nav-logo border">
+                <div class="logo"></div>
+            </div>
+            <div class="nav-address border">
+                <p class="add-first">Deliver to</p>
+                <div class="add-icon">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <p class="add-second">India</p>
+                </div>
+            </div>
+            <div class="nav-search">
+                <select class="search-select">
+                    <option value="all">All</option>
+                    <option value="Electronics">Electronics</option>
+                    <option value="Fashion">Fashion</option>
+                    <option value="Home">Home</option>
+                    <option value="Beauty">Beauty</option>
+                    <option value="Accessories">Accessories</option>
+                </select>
+                <input id="searchInput" placeholder="Search NovaMart" class="search-input">
+                <button class="search-icon" id="searchButton" type="button" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+            <div class="nav-signin border">
+                <p><span>Hello,sign in</span></p>
+                <p class="nav-second">Account & Lists</p>
+            </div>
+            <div class="nav-return border">
+                <p><span>Returns</span></p>
+                <p class="nav-second">& Orders</p>
+            </div>
+            <div class="nav-cart border">
+                <i class="fa-solid fa-cart-shopping"></i>
+                Cart <span id="cartBadge" class="cart-badge">0</span>
+            </div>
 
-    <div class="announcement">
-        ✨ Welcome to NovaMart — Your next favourite find awaits!
-    </div>
-
-    <header class="navbar">
-        <a href="#" class="logo"><span class="logo-icon">N</span> nova<span>mart.</span></a>
-
-        <nav class="nav-links">
-            <a href="#home">Home</a>
-            <a href="#shop">Shop</a>
-            <a href="#categories">Categories</a>
-            <a href="#about">About</a>
-        </nav>
-
-        <div class="nav-actions">
-            <button class="icon-button" id="search-focus" aria-label="Focus search">⌕</button>
-            <button class="icon-button wishlist-nav" id="wishlist-nav" aria-label="Show wishlist">
-                ♡ <span id="wishlist-count" class="small-count">0</span>
-            </button>
-            <button class="cart-nav" id="open-cart">
-                🛍 Cart <span id="cart-count" class="cart-count">0</span>
-            </button>
         </div>
+        <div class="panel">    
+            <div class="icon-all border">
+                 <i class="fa-solid fa-bars"></i>
+                 All
+            </div>
+            <div class="panel-ops ">
+                <p>Coupons</p>
+                <p>Customer Service</p>
+                <p>Today's Deals</p>
+                <p>Registry</p>
+                <p>Gift Cards</p>
+                <p>Sell</p>
+            </div>
+            <div class="panel-deals border">
+                Shops deals in Electronics
+
+            </div>
+
+            
+        </div>
+
     </header>
-
-    <main>
-        <section class="hero" id="home">
-            <div class="hero-content">
-                <span class="eyebrow">YOUR EVERYDAY, UPGRADED</span>
-                <h1>Find your next<br> <span>favourite thing.</span></h1>
-                <p>Thoughtfully picked essentials, trending finds and little things that make life better.</p>
-                <div class="hero-actions">
-                    <a href="#shop" class="primary-button">Explore collection ↗</a>
-                    <span class="hero-note">✦ Curated just for you</span>
-                </div>
-                <div class="hero-stats">
-                    <div><strong>12+</strong><span>Unique products</span></div>
-                    <div><strong>4.8/5</strong><span>Demo rating</span></div>
-                    <div><strong>100%</strong><span>Good vibes</span></div>
-                </div>
+    <div class="hero-section">
+        <ul class="img">
+            <li class="img1">
+                <div><h2>Shop kitchen <br>must-haves
+                </h2></div>
+            </li>
+            <li class="img2">
+                <div><h2>Shop all <br>things beauty</h2></div>
+            </li>
+            <li class="img3"><div><h2>Start looking<br>sharp</h2></div></li>
+            <li class="img4"><div><h2>Level up<br> your PC here</h2></div></li>
+            
+        </ul>
+        
+    </div>
+    <div class="shop-section">
+        <div class=" box">
+            <div class="box-content">
+                <h3>Clothes</h3>
+                <div class="box-img" style="background-image:url('box1_image.jpg');"></div>
+                <p >see more</p>
             </div>
-            <div class="hero-visual">
-                <div class="hero-orb"></div>
-                <div class="hero-image-wrap">
-                    <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=900&q=85" alt="Red statement sneakers">
-                </div>
-                <div class="floating-card floating-top">✦ Trending now</div>
-                <div class="floating-card floating-bottom"><span>✦</span><div><strong>Little things.</strong><small>Big happiness.</small></div></div>
+        </div>
+        <div class=" box">
+            <div class="box-content">
+                <h3>Health & Personal Care</h3>
+                <div class="box-img" style="background-image:url('box2_image.jpg');"></div>
+                <p>see more</p>
             </div>
-        </section>
-
-        <section class="trust-strip">
-            <div>✦ Carefully curated finds</div>
-            <div>♡ Made for everyday living</div>
-            <div>↗ Simple, joyful shopping</div>
-            <div>◈ Student-built demo store</div>
-        </section>
-
-        <section class="category-section section" id="categories">
-            <div class="section-heading">
-                <div><span class="eyebrow">EXPLORE YOUR STYLE</span><h2>Shop by category</h2></div>
-                <p>A little something for every kind of you.</p>
+        </div>
+        <div class=" box">
+            <div class="box-content">
+                <h3>Furniture</h3>
+                <div class="box-img" style="background-image:url('box3_image.jpg');"></div>
+                <p>see more</p>
             </div>
-            <div class="category-list">
-                <button class="category-tile active" data-category="All"><span>✦</span><strong>Everything</strong><small>All the good stuff</small></button>
-                <button class="category-tile" data-category="Fashion"><span>◈</span><strong>Fashion</strong><small>Wear your vibe</small></button>
-                <button class="category-tile" data-category="Technology"><span>⌁</span><strong>Technology</strong><small>Smart little upgrades</small></button>
-                <button class="category-tile" data-category="Lifestyle"><span>❋</span><strong>Lifestyle</strong><small>Everyday favourites</small></button>
-                <button class="category-tile" data-category="Accessories"><span>♡</span><strong>Accessories</strong><small>Details that shine</small></button>
+        </div>
+        <div class=" box">
+            <div class="box-content">
+                <h3>Electronics</h3>
+                <div class="box-img" style="background-image:url('box4_image.jpg');"></div>
+                <p>see more</p>
             </div>
-        </section>
-
-        <section class="shop-section section" id="shop">
-            <div class="section-heading">
-                <div><span class="eyebrow">THE GOOD STUFF</span><h2>Our favourite finds<span class="heading-dot">.</span></h2><p class="muted">Explore our collection of hand-picked essentials.</p></div>
-                <span class="product-total" id="product-total">12 products</span>
+        </div>
+        <div class=" box">
+            <div class="box-content">
+                <h3>Beauty Picks</h3>
+                <div class="box-img" style="background-image:url('box5_image.jpg');"></div>
+                <p>see more</p>
             </div>
-
-            <div class="shop-toolbar">
-                <label class="search-box">
-                    <span>⌕</span>
-                    <input id="search-input" type="search" placeholder="Search products..." aria-label="Search products">
-                    <kbd>SEARCH</kbd>
-                </label>
-                <label class="sort-box">Sort by
-                    <select id="sort-select" aria-label="Sort products">
-                        <option value="featured">Featured</option>
-                        <option value="low">Price: low to high</option>
-                        <option value="high">Price: high to low</option>
-                        <option value="rating">Top rated</option>
-                        <option value="name">Name: A–Z</option>
-                    </select>
-                </label>
+        </div>
+        <div class=" box">
+            <div class="box-content">
+                <h3>Pet Care</h3>
+                <div class="box-img" style="background-image:url('box6_image.jpg');"></div>
+                <p>see more</p>
             </div>
-
-            <div class="active-filters">
-                <div class="filter-chips" id="filter-chips">
-                    <button class="filter-chip active" data-category="All">All products</button>
-                    <button class="filter-chip" data-category="Fashion">Fashion</button>
-                    <button class="filter-chip" data-category="Technology">Technology</button>
-                    <button class="filter-chip" data-category="Lifestyle">Lifestyle</button>
-                    <button class="filter-chip" data-category="Accessories">Accessories</button>
-                </div>
-                <label class="sale-toggle"><input type="checkbox" id="sale-filter"> Sale items only</label>
+        </div>
+        <div class=" box">
+            <div class="box-content">
+                <h3>New Arrival in Toys</h3>
+                <div class="box-img" style="background-image:url('box7_image.jpg');"></div>
+                <p>see more</p>
             </div>
-
-            <div class="product-grid" id="product-grid" aria-live="polite"></div>
-            <div class="empty-state hidden" id="empty-state">
-                <span>⌕</span><h3>No products found</h3><p>Try another search or change your filters.</p>
-                <button class="primary-button" id="reset-filters">Reset filters</button>
+        </div>
+        <div class=" box">
+            <div class="box-content">
+                <h3>Discover Fashion Trends</h3>
+                <div class="box-img" style="background-image:url('box8_image.jpg');"></div>
+                <p>see more</p>
             </div>
-        </section>
-
-        <section class="promo-banner section" id="about">
-            <div class="promo-copy"><span class="eyebrow">A LITTLE MORE JOY</span><h2>Good finds.<br>Better everyday.</h2><p>NovaMart is a student-built shopping experience made to demonstrate modern web design and interactive shopping features.</p><a href="#shop" class="light-button">Find your favourite ↗</a></div>
-            <div class="promo-decoration"><div class="promo-circle">N<span>✦</span></div><span class="promo-star star-one">✳</span><span class="promo-star star-two">✦</span></div>
-        </section>
-
-        <section class="features-row section">
-            <article><span>♡</span><h3>Curated with care</h3><p>A collection across everyday categories.</p></article>
-            <article><span>✦</span><h3>Easy to explore</h3><p>Find products with search and filters.</p></article>
-            <article><span>↗</span><h3>Simple cart</h3><p>Track items and calculate your total instantly.</p></article>
-        </section>
-    </main>
-
-    <footer class="footer">
-        <a href="#home" class="logo"><span class="logo-icon">N</span> nova<span>mart.</span></a>
-        <p>A front-end e-commerce project made with HTML, CSS & JavaScript.</p>
-        <span>© 2026 NovaMart · Group 8 · Academic demo only</span>
-    </footer>
-
-    <div class="overlay" id="overlay"></div>
-
-    <aside class="cart-drawer" id="cart-drawer" aria-label="Shopping cart" aria-hidden="true">
-        <div class="drawer-header">
-            <div><span class="eyebrow">YOUR PICKS</span><h2>Your cart <span id="drawer-count">(0)</span></h2></div>
-            <button class="close-button" id="close-cart" aria-label="Close cart">×</button>
         </div>
 
-        <div class="cart-items" id="cart-items"></div>
-
-        <div class="cart-empty" id="cart-empty">
-            <span>🛍</span><h3>Your cart is waiting</h3><p>Looks like you haven't found your favourites yet.</p>
-            <button class="primary-button" id="continue-shopping">Let's explore</button>
-        </div>
-
-        <div class="cart-summary" id="cart-summary">
-            <div class="summary-line"><span>Subtotal</span><strong id="cart-subtotal">₹0</strong></div>
-            <div class="summary-line"><span>Delivery</span><strong id="delivery-cost">₹0</strong></div>
-            <div class="summary-line discount-line"><span>Demo discount (5%)</span><strong id="discount-amount">−₹0</strong></div>
-            <div class="summary-line total-line"><span>Total amount</span><strong id="cart-total">₹0</strong></div>
-            <p class="shipping-note" id="shipping-note">Add products to see your order summary.</p>
-            <button class="checkout-button" id="checkout-button">Proceed to demo checkout ↗</button>
-            <button class="clear-cart-button" id="clear-cart">Clear cart</button>
-            <p class="demo-disclaimer">Demo only · No real payment or order will be made.</p>
-        </div>
-    </aside>
-
-    <div class="toast-container" id="toast-container" aria-live="polite"></div>
-
-    <div class="modal-backdrop" id="checkout-modal" role="dialog" aria-modal="true" aria-labelledby="checkout-title">
-        <div class="checkout-modal">
-            <button class="close-button modal-close" id="close-checkout" aria-label="Close checkout">×</button>
-            <div class="success-icon">✓</div>
-            <span class="eyebrow">DEMO CHECKOUT</span>
-            <h2 id="checkout-title">Looking good!</h2>
-            <p>This is a front-end demonstration. No payment has been taken and no real order has been placed.</p>
-            <div class="checkout-total"><span>Demo order total</span><strong id="modal-total">₹0</strong></div>
-            <button class="primary-button full-button" id="finish-checkout">Back to shopping</button>
-        </div>
     </div>
 
-    <button class="back-to-top" id="back-to-top" aria-label="Back to top">↑</button>
+    <!-- Product listing  -->
+    <section class="product-section" id="products">
+        <h2>Popular Products</h2>
+        <div class="product-toolbar">
+            <p class="product-intro">Explore our products and add your favourites to the cart.</p>
+            <label for="sortSelect">Sort by:
+                <select id="sortSelect">
+                    <option value="featured">Featured</option>
+                    <option value="low">Price: Low to High</option>
+                    <option value="high">Price: High to Low</option>
+                </select>
+            </label>
+        </div>
+        <div class="product-grid" id="productGrid"></div>
+        <p id="noProducts" class="empty-cart" hidden>No products found. Try another search.</p>
+    </section>
 
+    <!-- Static front-end shopping cart -->
+    <section class="cart-section" id="cart">
+        <h2>Your Shopping Cart</h2>
+        <div id="cartItems" class="cart-items">
+            <p class="empty-cart">Your cart is empty.</p>
+        </div>
+        <div class="cart-total">
+            <strong>Total: <span id="totalPrice">₹0</span></strong>
+        </div>
+    </section>
+
+    <footer><div class="foot-panel1">
+        Back to Top
+    </div>
+    <div class="foot-panel2">
+        <ul>
+            <p>Get to Know Us</p>
+            <a>Careers</a>
+            <a>Blog</a>
+            <a>About NovaMart</a>
+            <a>Investor Relations</a>
+            <a>NovaMart Devices</a>
+            <a>NovaMart Science</a>
+        </ul>
+        <ul>
+            <p>Make Money with Us</p>
+            <a>Sell products on NovaMart</a>
+            <a>Sell on NovaMart Business</a>
+            <a>Sell apps on NovaMart</a>
+            <a>Become an Affiliate</a>
+            <a>Advertise Your Products</a>
+            <a>Self-Publish with Us</a>
+            <a>Host an NovaMart Hub</a>
+            <a>See More Make Money with Us</a>
+        </ul>
+        <ul>
+            <p>NovaMart Payment Products</p>
+            <a>NovaMart Business Card</a>
+            <a>Shop with Points</a>
+            <a>Reload Your Balance</a>
+            <a>NovaMart Currency Converter</a>
+        </ul>
+        <ul>
+            <p>Let Us Help You</p>
+            <a>Your Account</a>
+            <a>Your Orders</a>
+            <a>Shipping Rates & Policies</a>
+            <a>Returns & Replacements</a>
+            <a>Manage Your Content and Devices</a>
+            <a>Help</a>
+        </ul>
+    </div>
+    <div class="foot-panel3">
+        <div class="nova-logo"></div>
+    </div>
+    <div class="foot-panel4">
+        <div class="pages">
+            <a>Conditions of Use</a>
+            <a>Privacy Notice</a>
+            <a>Your Ads Privacy Choices</a>
+        </div>
+        <div class="copyright">
+            © 2026-2026, NovaMart.com, Inc. or its affiliates
+        </div>
+    </div>
+</footer>
+    
 </body>
 </html>
