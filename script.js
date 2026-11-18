@@ -1,7 +1,16 @@
+/**
+ * ====================================================================
+ * NovaMart - Static E-Commerce Product Page
+ * Core Application Logic, Event Handling & Cart Management
+ * 
+ * Contributors:
+ * - Manas Dubey (Roll No: 202610101200022) - Code Quality & Defensive Validation
+ * - Sakshi Nagar (Roll No: 202610101200023) - Assets & Content Coordination
+ * - Manasvi Saharawat (Roll No: 202610101200024) - UI Architecture & Core Layout
+ * ====================================================================
+ */
 
-// NovaMart -Static E-Commerce Product Page
-// Product listing, search, category filter, cart, quantity and total price.
-
+// Product catalog
 const products = [
     { id: 1, name: "Wireless Bluetooth Headphones", category: "Electronics", price: 1499, rating: "★★★★☆", description: "Comfortable wireless headphones with clear sound.", image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=700" },
     { id: 2, name: "Smart Fitness Watch", category: "Electronics", price: 2199, rating: "★★★★☆", description: "Track your activity and daily fitness goals.", image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=700" },
@@ -17,25 +26,38 @@ const products = [
     { id: 12, name: "Travel Water Bottle", category: "Accessories", price: 499, rating: "★★★★★", description: "A reusable bottle for everyday use.", image: "https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=700" }
 ];
 
-// Cart stores products added by the user and their quantities.
+// In-memory cart state
 let cart = [];
 
+// DOM Element references with safe selectors
 const productGrid = document.getElementById("productGrid");
 const cartItems = document.getElementById("cartItems");
 const cartBadge = document.getElementById("cartBadge");
 const totalPrice = document.getElementById("totalPrice");
 const searchInput = document.getElementById("searchInput");
+const searchButton = document.getElementById("searchButton");
 const categoryFilter = document.querySelector(".search-select");
 const sortSelect = document.getElementById("sortSelect");
 const noProducts = document.getElementById("noProducts");
 
-// Convert number into Indian Rupee format.
+/**
+ * Safely format numerical values to Indian Rupee (INR) currency format.
+ * @param {number} price - Numerical value to format
+ * @returns {string} Formatted currency string
+ */
 function formatPrice(price) {
+    if (typeof price !== "number" || isNaN(price)) {
+        return "₹0";
+    }
     return "₹" + price.toLocaleString("en-IN");
 }
 
-// Display all products or the filtered product list.
+/**
+ * Render product cards dynamically into the DOM grid.
+ * @param {Array} productList - List of product objects to display
+ */
 function displayProducts(productList = products) {
+    if (!productGrid) return;
     productGrid.innerHTML = "";
 
     if (noProducts) {
@@ -62,11 +84,16 @@ function displayProducts(productList = products) {
     });
 }
 
-// Add a product to the cart. If it already exists, increase its quantity.
+/**
+ * Add an item to the shopping cart or increment its quantity if already present.
+ * @param {number} productId - The unique ID of the product
+ */
 function addToCart(productId) {
     const selectedProduct = products.find(function (product) {
         return product.id === productId;
     });
+
+    if (!selectedProduct) return;
 
     const existingItem = cart.find(function (item) {
         return item.id === productId;
@@ -81,7 +108,10 @@ function addToCart(productId) {
     displayCart();
 }
 
-// Remove a product completely from the cart.
+/**
+ * Remove an item completely from the cart by its product ID.
+ * @param {number} productId - The unique ID of the product
+ */
 function removeFromCart(productId) {
     cart = cart.filter(function (item) {
         return item.id !== productId;
@@ -90,7 +120,12 @@ function removeFromCart(productId) {
     displayCart();
 }
 
-// Increase or decrease the quantity of a cart item.
+/**
+ * Adjust the quantity of an item in the shopping cart.
+ * Automatically removes the item if quantity drops to 0 or less.
+ * @param {number} productId - The unique ID of the product
+ * @param {number} change - Positive or negative integer (+1 or -1)
+ */
 function changeQuantity(productId, change) {
     const selectedItem = cart.find(function (item) {
         return item.id === productId;
@@ -107,8 +142,11 @@ function changeQuantity(productId, change) {
     }
 }
 
-// Update cart items, cart badge and total price on the webpage.
+/**
+ * Re-render the cart UI, update badge count and re-calculate grand total.
+ */
 function displayCart() {
+    if (!cartItems) return;
     cartItems.innerHTML = "";
 
     let total = 0;
@@ -116,39 +154,47 @@ function displayCart() {
 
     if (cart.length === 0) {
         cartItems.innerHTML = '<p class="empty-cart">Your cart is empty.</p>';
+    } else {
+        cart.forEach(function (item) {
+            const itemSubtotal = item.price * item.quantity;
+            total += itemSubtotal;
+            totalItems += item.quantity;
+
+            const cartRow = document.createElement("div");
+            cartRow.className = "cart-item";
+
+            cartRow.innerHTML = `
+                <img src="${item.image}" alt="${item.name}">
+                <div class="cart-item-info">
+                    <h4>${item.name}</h4>
+                    <p>${formatPrice(item.price)} each</p>
+                    <button class="quantity-btn" data-minus="${item.id}" type="button">−</button>
+                    <span>${item.quantity}</span>
+                    <button class="quantity-btn" data-plus="${item.id}" type="button">+</button>
+                    <button class="remove-btn" data-remove="${item.id}" type="button">Remove</button>
+                </div>
+                <strong>${formatPrice(itemSubtotal)}</strong>
+            `;
+
+            cartItems.appendChild(cartRow);
+        });
     }
 
-    cart.forEach(function (item) {
-        total += item.price * item.quantity;
-        totalItems += item.quantity;
-
-        const cartRow = document.createElement("div");
-        cartRow.className = "cart-item";
-
-        cartRow.innerHTML = `
-            <img src="${item.image}" alt="${item.name}">
-            <div class="cart-item-info">
-                <h4>${item.name}</h4>
-                <p>${formatPrice(item.price)} each</p>
-                <button class="quantity-btn" data-minus="${item.id}" type="button">−</button>
-                <span>${item.quantity}</span>
-                <button class="quantity-btn" data-plus="${item.id}" type="button">+</button>
-                <button class="remove-btn" data-remove="${item.id}" type="button">Remove</button>
-            </div>
-            <strong>${formatPrice(item.price * item.quantity)}</strong>
-        `;
-
-        cartItems.appendChild(cartRow);
-    });
-
-    cartBadge.textContent = totalItems;
-    totalPrice.textContent = formatPrice(total);
+    if (cartBadge) {
+        cartBadge.textContent = totalItems;
+    }
+    if (totalPrice) {
+        totalPrice.textContent = formatPrice(total);
+    }
 }
 
-// Search products and apply the selected category and sorting option.
+/**
+ * Filter product catalog by search keywords and selected category,
+ * and sort by price ascending / descending.
+ */
 function filterAndSortProducts() {
-    const searchText = searchInput.value.toLowerCase().trim();
-    const selectedCategory = categoryFilter.value;
+    const searchText = searchInput ? searchInput.value.toLowerCase().trim() : "";
+    const selectedCategory = categoryFilter ? categoryFilter.value : "All";
 
     let filteredProducts = products.filter(function (product) {
         const matchesSearch =
@@ -173,40 +219,47 @@ function filterAndSortProducts() {
     displayProducts(filteredProducts);
 }
 
-// Product Add to Cart button click.
-productGrid.addEventListener("click", function (event) {
-    const addButton = event.target.closest("[data-add]");
+// Event Delegation: Add to cart button clicks
+if (productGrid) {
+    productGrid.addEventListener("click", function (event) {
+        const addButton = event.target.closest("[data-add]");
+        if (addButton) {
+            addToCart(Number(addButton.dataset.add));
+        }
+    });
+}
 
-    if (addButton) {
-        addToCart(Number(addButton.dataset.add));
-    }
-});
+// Event Delegation: Cart plus, minus and remove button clicks
+if (cartItems) {
+    cartItems.addEventListener("click", function (event) {
+        const plusButton = event.target.closest("[data-plus]");
+        const minusButton = event.target.closest("[data-minus]");
+        const removeButton = event.target.closest("[data-remove]");
 
-// Cart plus, minus and remove button clicks.
-cartItems.addEventListener("click", function (event) {
-    const plusButton = event.target.closest("[data-plus]");
-    const minusButton = event.target.closest("[data-minus]");
-    const removeButton = event.target.closest("[data-remove]");
+        if (plusButton) {
+            changeQuantity(Number(plusButton.dataset.plus), 1);
+        } else if (minusButton) {
+            changeQuantity(Number(minusButton.dataset.minus), -1);
+        } else if (removeButton) {
+            removeFromCart(Number(removeButton.dataset.remove));
+        }
+    });
+}
 
-    if (plusButton) {
-        changeQuantity(Number(plusButton.dataset.plus), 1);
-    } else if (minusButton) {
-        changeQuantity(Number(minusButton.dataset.minus), -1);
-    } else if (removeButton) {
-        removeFromCart(Number(removeButton.dataset.remove));
-    }
-});
-
-// Search when typing or clicking the search icon.
-searchInput.addEventListener("input", filterAndSortProducts);
-document.getElementById("searchButton").addEventListener("click", filterAndSortProducts);
-categoryFilter.addEventListener("change", filterAndSortProducts);
-
+// Search and filter event listeners with safe element verification
+if (searchInput) {
+    searchInput.addEventListener("input", filterAndSortProducts);
+}
+if (searchButton) {
+    searchButton.addEventListener("click", filterAndSortProducts);
+}
+if (categoryFilter) {
+    categoryFilter.addEventListener("change", filterAndSortProducts);
+}
 if (sortSelect) {
     sortSelect.addEventListener("change", filterAndSortProducts);
 }
 
-// Show all products and an empty cart when the page first loads.
+// Initialize application state on page load
 displayProducts();
 displayCart();
-
