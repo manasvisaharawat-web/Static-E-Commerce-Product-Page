@@ -3,12 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NovaMart</title>
+    <title>NovaMart | Static E-Commerce Product Page</title>
+
+    <!-- Project & Team Metadata (No visual impact) -->
+    <meta name="description" content="NovaMart - A responsive and modern static e-commerce product platform.">
+    <meta name="keywords" content="NovaMart, E-Commerce, Online Shopping, Electronics, Fashion, Home">
+    <meta name="author" content="Manas Dubey (202610101200022), Sakshi Nagar (202610101200023), Manasvi Saharawat (202610101200024)">
+    <meta name="theme-color" content="#131921">
+
+    <!-- Open Graph Protocol for Web Standards -->
+    <meta property="og:title" content="NovaMart E-Commerce">
+    <meta property="og:description" content="Explore popular products across electronics, fashion, and home decor.">
+    <meta property="og:type" content="website">
+
+    <!-- Stylesheets & Scripts -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg==" crossorigin="anonymous" referrerpolicy="no-referrer">
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
 <body>
+    <!-- Team Credits: Manas Dubey (202610101200022) | Sakshi Nagar (202610101200023) | Manasvi Saharawat (202610101200024) -->
     <header>
         <div class="navbar">
             <div class="nav-logo border">
@@ -22,7 +36,7 @@
                 </div>
             </div>
             <div class="nav-search">
-                <select class="search-select">
+                <select class="search-select" aria-label="Select Category">
                     <option value="all">All</option>
                     <option value="Electronics">Electronics</option>
                     <option value="Fashion">Fashion</option>
@@ -30,7 +44,7 @@
                     <option value="Beauty">Beauty</option>
                     <option value="Accessories">Accessories</option>
                 </select>
-                <input id="searchInput" placeholder="Search NovaMart" class="search-input">
+                <input id="searchInput" type="search" placeholder="Search NovaMart" class="search-input" autocomplete="off" spellcheck="false" aria-label="Search NovaMart">
                 <button class="search-icon" id="searchButton" type="button" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
             </div>
             <div class="nav-signin border">
@@ -172,7 +186,7 @@
         </div>
     </section>
 
-    <footer><div class="foot-panel1">
+    <footer><div class="foot-panel1" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" style="cursor: pointer;">
         Back to Top
     </div>
     <div class="foot-panel2">
