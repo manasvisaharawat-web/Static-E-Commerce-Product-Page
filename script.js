@@ -1,4 +1,3 @@
-
 // NovaMart - Static E-Commerce Product Page
 // Product listing, search, category filter, cart, quantity and total price.
 
@@ -209,3 +208,4 @@ if (sortSelect) {
 // Show all products and an empty cart when the page first loads.
 displayProducts();
 displayCart();
+
